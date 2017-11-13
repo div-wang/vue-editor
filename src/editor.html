@@ -1,0 +1,35 @@
+<div class="vue-editor" :class="{'full-screen':fullScreen}" :style="{'z-index':zindex}">
+    <div class="toolbar" :style="{'z-index':zindex+1}" ref="toolbar">
+        <ul>
+            <template v-for="module in modules">
+                <li :name="module.name" :title="locale[module.i18n]" v-if="module.title">
+                    <div v-if="module.selects">
+                        {{module.title}}：
+                        <select @change="activeModule(module, $event)">
+                            <option :value="num" v-for="num in module.selects">{{num}}</option>
+                        </select>
+                    </div>
+                    <div v-else @click="activeModule(module, $event)">预览</div>
+                </li>
+                <li
+                    :class="{align: module.class === 'align', list: module.class === 'list', active: modulesClass[module.name]}"
+                    :name="module.name" :title="locale[module.i18n]"
+                    :data-type="module.type"
+                    @click="activeModule(module, $event)"
+                    v-else>
+                    <span class="icon" :class="module.icon"></span>
+                    <template v-if="showModuleName === undefined ? defaultShowModuleName : showModuleName">
+                        &nbsp;{{locale[module.i18n]}}
+                    </template>
+                </li>
+            </template>
+            <div v-show="showErrLog" style="color: #f00;padding-left: 10px;">{{showErrLog}}</div>
+        </ul>
+        <div class="dashboard" v-show="dashboard" ref="dashboard">
+            <keep-alive>
+                <div v-show="dashboard" :is="dashboard"></div>
+            </keep-alive>
+        </div>
+    </div>
+    <div class="content" ref="content" :style="contentStyle" contenteditable></div>
+</div>

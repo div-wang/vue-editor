@@ -1,0 +1,9 @@
+<div>
+    <button type="button" @click="$parent.execCommand('bold', $event)">{{$parent.locale["bold"]}}</button>
+    <button type="button" @click="$parent.execCommand('italic', $event)">{{$parent.locale["italic"]}}</button>
+    <button type="button" @click="$parent.execCommand('underline', $event)">{{$parent.locale["underline"]}}</button>
+    <button type="button" @click="$parent.execCommand('strikeThrough', $event)">{{$parent.locale["strike through"]}}
+    </button>
+    <button type="button" @click="$parent.execCommand('subscript', $event)">{{$parent.locale["subscript"]}}</button>
+    <button type="button" @click="$parent.execCommand('superscript', $event)">{{$parent.locale["superscript"]}}</button>
+</div>
