@@ -1,7 +1,7 @@
 {
   "name": "vue-editor",
   "version": "1.0.0",
-  "description": "A WYSIWYG text editor base on vue",
+  "description": "vue 富文本编辑器，支持高亮选中",
   "repository": {
     "type": "git",
     "url": "https://github.com/div-wang/vue-editor"
@@ -15,8 +15,7 @@
   "keywords": [
     "vue",
     "WYSIWYG",
-    "richtext",
-    "html5",
+    "plugin"
     "editor"
   ],
   "author": "peak",
