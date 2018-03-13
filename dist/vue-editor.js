@@ -1,7 +1,7 @@
 /**
  * Vue-editor 1.0.0
  * https://github.com/div-wang/vue-editor
- * build at Mon Oct 16 2017 14:15:16 GMT+0800 (CST)
+ * build at Fri Mar 09 2018 10:42:22 GMT+0800 (CST)
  */
 
 (function (global, factory) {
